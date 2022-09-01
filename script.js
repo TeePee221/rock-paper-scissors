@@ -5,13 +5,13 @@ console.log(`Player has chosen ${playerChoice}!!!`)
 
 
 function computerChoice () {
-    const choice = choices[Math.floor(Math.random() * choices.length)];
-    console.log(`Computer has chosen ${choice}!!`);
-    return choice
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+    console.log(`Computer has chosen ${computerChoice}!!`);
+    return computerChoice
     
 }
 
-function checkWinner (playerChoice, choice){
+function checkWinner (playerChoice, computerChoice){
     if(playerChoice == computerChoice){
         return "tie";
     }
