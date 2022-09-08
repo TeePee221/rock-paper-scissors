@@ -1,17 +1,21 @@
 const choices = ["rock", "paper", "scissors"]
-const playerChoice = prompt("Choose").toLowerCase();
-console.log(`Player has chosen ${playerChoice}!!!`)
 
+
+function playerChoosing() {
+    const playerChoice = prompt("Choose").toLowerCase();
+    console.log(`Player has chosen ${playerChoice}!!!`)
+    return playerChoice
+}
 
 
 function computerChoice () {
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    console.log(`Computer has chosen ${computerChoice}!!`);
     return computerChoice
     
 }
 
 function checkWinner (playerChoice, computerChoice){
+    console.log(`Computer has chosen ${computerChoice}!!`)
     if(playerChoice == computerChoice){
         return "tie";
     }
@@ -38,6 +42,12 @@ function playRound(playerChoice, computerChoice){
     }
 }
 
-const computerSelection = computerChoice();
 
-console.log(playRound(playerChoice, computerSelection));
+function game (){
+    for (let i = 0; i < 5; i++) {
+    const computerSelection = computerChoice();
+    const playerChoice = playerChoosing(); 
+     console.log(playRound(playerChoice,computerSelection));
+    }
+}
+game()
